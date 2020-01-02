@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../partials/head %>
+</head>
+
+<body>
+    <% include ../partials/menu %>
+
+    <div class="container bg-3 text-center">
+        <h3>
+            <%= page %>
+        </h3><br>
+        <div class="row">
+            <% for (item in smartHomeDevices) { %>
+            <div class="col-md-6">
+                <div class="smart-home-item">
+                    <div class="device-title">
+                        <span>
+                            <%= smartHomeDevices[item].name %></span>
+                    </div>
+                    <div class="device-info">
+                        <% if (smartHomeDevices[item].machine_type == 'LAMP') { %>
+                            <img src="./smart/lamp_bed.png" width="250px" height="220px" style="display:block;margin:auto;">
+                        <% } %>
+                        <% if (smartHomeDevices[item].machine_type == 'RFID') { %>
+                            <img src="./smart/RFD_logo.png" width="250px" height="220px" style="display:block;margin:auto;">
+                        <% } %>
+                        <% if (smartHomeDevices[item].machine_type == 'RESTROOM_LIGHT') { %>
+                            <img src="./smart/light_on.png" width="250px" height="220px" style="display:block;margin:auto;">
+                        <% } %>
+                        <% if (smartHomeDevices[item].machine_type == 'BEDROOM_DHT22') { %>
+                            <img src="./smart/Temperature.png" width="250px" height="220px" style="display:block;margin:auto;">
+                        <% } %>
+                        <% if (smartHomeDevices[item].machine_type == 'CAMERA') { %>
+                            <img src="./smart/camera.png" width="250px" height="220px" style="display:block;margin:auto;">
+                        <% } %>
+                        <% if (smartHomeDevices[item].machine_type == 'Kitchen_Light') { %>
+                            <img src="./smart/light_on.png" width="250px" height="220px" style="display:block;margin:auto;">
+                        <% } %>
+                        <% if (smartHomeDevices[item].machine_type == 'Fan') { %>
+                            <img src="./smart/fan.png" width="250px" height="220px" style="display:block;margin:auto;">
+                        <% } %>
+                        <% if (smartHomeDevices[item].machine_type == 'Bedroom_Light') { %>
+                            <img src="./smart/light_on.png" width="250px" height="220px" style="display:block;margin:auto;">
+
+                        <% } %>
+                        <% if (smartHomeDevices[item].machine_type == 'DHT22') { %>
+                            <img src="./smart/Temperature.png" width="250px" height="220px" style="display:block;margin:auto;">
+                        <% } %>
+                        <% if (smartHomeDevices[item].machine_type == 'Fingerprint_Sensor') { %>
+                            <img src="./smart/fingerprint.png"  height="220px" style="display:block;margin:auto;max-width:100%;">
+                        <% } %>
+                        <% if (smartHomeDevices[item].machine_type == 'Livingroom_Light') { %>
+                            <img src="./smart/light_on.png" width="250px" height="220px" style="display:block;margin:auto;">
+
+                        <% } %>
+                        <% if (smartHomeDevices[item].machine_type == 'DHT22' || smartHomeDevices[item].machine_type == 'BEDROOM_DHT22') { %>
+                        <div>
+                            <div class="temperature" style="text-align: center;">
+                                <span>Temperature: </span> <span class="specific">
+                                    <%= smartHomeDevices[item].data.Temperature %> ℃</span>
+                            </div>
+                            <div class="humidity" style="text-align: center;">
+                                <span>Humidity: </span> <span class="specific">
+                                        <%= smartHomeDevices[item].data.Humidity %> %</span>
+                            </div>
+                        </div>
+                        <% } %>
+                    </div>
+                    <div class="text-center action-item">
+                        <% if (smartHomeDevices[item].machine_type == 'Fingerprint_Sensor') { %>
+                        <a href="/smart-homes/devices/<%= item %>/users" class="btn btn-info show-list-finger-user">Show
+                            Finger Users</a>
+                        <% } else if(smartHomeDevices[item].machine_type == 'CAMERA') { %>
+                            <div id="btn-camera">
+                                <a href="/smart-homes/devices/camera">Open Camera</a>
+                            </div>
+                        <% } else if(smartHomeDevices[item].machine_type == 'RFID') { %>
+                            <a href="/smart-homes/devices/<%= item %>/users" class="btn btn-info show-list-finger-user">Show
+                                RFID</a>
+                        <% } else if(smartHomeDevices[item].machine_type == 'LAMP') { %>
+                            <!-- ************************ -->
+                            <div class="chel1chel2">
+                                <div id="che1" onclick="chag(this.id)" data-dosag = "25" data-id="
+                                <%= smartHomeDevices[item].smarthomeDevice_id %>" data-smarthomeid="
+                                <%= smartHomeDevices[item].smarthome_id %>">
+                                    <span>25%</span>
+                                </div>
+                                <!-- ************************ -->
+                                <div id="che2" onclick="chag(this.id)" data-dosag = "50" data-id="
+                                <%= smartHomeDevices[item].smarthomeDevice_id %>" data-smarthomeid="
+                                <%= smartHomeDevices[item].smarthome_id %>">
+                                    <span>50%</span>
+                                </div>
+                            </div>
+                            <!-- ************************ -->
+                            <a onclick="kiemTraChe()"><input id="tragThaiCheck" type="checkbox" class="control-action" name="control-action" <%-
+                                smartHomeDevices[item].status=='active' ? 'checked' : '' %> data-toggle="toggle"
+                            data-onstyle="success" data-width="130"
+                            data-height="50" data-id="
+                            <%= smartHomeDevices[item].smarthomeDevice_id %>" data-smarthomeid="
+                            <%= smartHomeDevices[item].smarthome_id %>"></a>
+                            <!-- ************************ -->
+                            <div class="chel1chel2">
+                                <div id="che3" onclick="chag(this.id)" data-dosag = "75" data-id="
+                                <%= smartHomeDevices[item].smarthomeDevice_id %>" data-smarthomeid="
+                                <%= smartHomeDevices[item].smarthome_id %>">
+                                    <span>75%</span>
+                                </div>
+                                <!-- ************************ -->
+                                <div id="che4" onclick="chag(this.id)" data-dosag = "100" data-id="
+                                <%= smartHomeDevices[item].smarthomeDevice_id %>" data-smarthomeid="
+                                <%= smartHomeDevices[item].smarthome_id %>">
+                                    <span>100%</span>
+                                </div>
+                            </div>
+
+                        <% } else if(smartHomeDevices[item].machine_type != 'DHT22' && smartHomeDevices[item].machine_type != 'BEDROOM_DHT22') { %>
+                        <a><input type="checkbox" class="control-action" name="control-action" <%-
+                                smartHomeDevices[item].status=='active' ? 'checked' : '' %> data-toggle="toggle"
+                            data-onstyle="success" data-width="130"
+                            data-height="50" data-id="
+                            <%= smartHomeDevices[item].smarthomeDevice_id %>" data-smarthomeid="
+                            <%= smartHomeDevices[item].smarthome_id %>"></a>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+        </div>
+    </div>
+</body>
+<% include ../partials/script %>
+<script>
+    $(document).ready(function () {
+        setTimeout(function () {
+            $.LoadingOverlay("show", {
+                image: "",
+                fontawesome: "fa fa-cog fa-spin"
+            });
+            window.location.reload();
+        }, 95000);
+
+        $('.control-action').change(function () {
+            var smarthomeDevice_id = $.trim($(this).data('id'));
+            var smarthome_id = $.trim($(this).data('smarthomeid'));
+            var action = 'inactive';
+
+            if ($(this).is(':checked')) {
+                action = 'active';
+            }
+
+            $.LoadingOverlay("show", {
+                image: "",
+                fontawesome: "fa fa-cog fa-spin"
+            });
+
+            $.ajax({
+                url: "/smart-homes/do-action",
+                type: "post",
+                data: { smarthomeDevice_id: smarthomeDevice_id, smarthome_id: smarthome_id, action: action },
+                success: function (response) {
+                    console.log(response);
+                    $.LoadingOverlay("hide");
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log(textStatus, errorThrown);
+
+                    $.LoadingOverlay("hide");
+                }
+            });
+        });
+    });
+</script>
+
+</html>
