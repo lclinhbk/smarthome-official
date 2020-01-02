@@ -32,6 +32,11 @@ module.exports = {
 
                 }
             })
+            client.subscribe('lclinh/feeds/light.lamp', function (err) {
+                if (!err) {
+
+                }
+            })
         })
 
         client.on('message', async function (topic, message) {
@@ -54,6 +59,11 @@ module.exports = {
                     var emitData = { deviceId : 'f9a5ea77-6013-4fc3-b6cb-26272f3e9cdc', action : message.toString(), data : 'living-room' };
                     socketio.emitMessage(socketId, emitData);
                     break;
+                case 'lclinh/feeds/light.lamp':
+                    var emitData = { deviceId : '8f780bcd-2a48-4cc4-baab-0a277e0710ab', action : message.toString(), data : 'lamp' };
+                    socketio.emitMessage(socketId, emitData);
+                    break;
+
                 default: console.log('No devices')
 
               }
