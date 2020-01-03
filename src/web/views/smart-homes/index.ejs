@@ -35,7 +35,7 @@
   let x = document.querySelectorAll('#table-info');
   if(x.length == 1)
   {
-      for(let key in x)
+      for(let key of x)
       {
         key.classList.remove('col-md-6');
         key.classList.remove('col-xs-12');
