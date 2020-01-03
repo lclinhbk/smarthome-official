@@ -283,7 +283,7 @@
     margin-top: 10px;
     margin-right: 2%;
 }
-@media screen and (max-width:500px) {
+@media screen and (max-width:766px) {
     #btn-camera {
         max-width: 50%;
     }
@@ -292,13 +292,19 @@
         display: block;
         margin: 10px 0;
     }
+    #icon-options {
+      z-index: 10;
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+    }
     #show-content {
         position: absolute;
         top: 100%;
-        left: 0%;
+        left: 50%;
         display: none;
         padding: 5px;
-        width: 100%;
+        width: 50%;
         background: lightblue;
     }
     #fix-block-content {
