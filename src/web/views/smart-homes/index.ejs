@@ -3,12 +3,6 @@
 
 <head>
   <% include ../partials/head %>
-  <style>
-    .change{
-      width: 45%;
-      margin: auto;
-    }
-  </style>
 </head>
 
 <body>
@@ -20,7 +14,7 @@
     <div class="row">
       <% for (item in smartHomeList) { %>
       <div class="col-md-6 col-xs-12" id='table-info'>
-        <div class="smart-home-item" >
+        <div class="smart-home-item" id = 'smarthome-page'>
           <div class="device-title">
             <span>
               <%= smartHomeList[item].name %></span>
@@ -41,11 +35,12 @@
   let x = document.querySelectorAll('#table-info');
   if(x.length == 1)
   {
+
       for(let key of x)
       {
         key.classList.remove('col-md-6');
         key.classList.remove('col-xs-12');
-        key.classList.add('change');
+        // key.classList.add('change');
       }
   }
 </script>

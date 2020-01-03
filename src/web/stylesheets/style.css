@@ -283,6 +283,13 @@
     margin-top: 10px;
     margin-right: 2%;
 }
+#smarthome-page{
+  width: 40vw;
+  min-height: auto;
+
+  padding: 5px;
+  margin: auto;
+}
 @media screen and (max-width:766px) {
     #btn-camera {
         max-width: 50%;
@@ -297,6 +304,11 @@
       position: absolute;
       bottom: -10px;
       left: 0;
+    }
+    #smarthome-page{
+      width: 100vw;
+      min-height: auto;
+      margin: auto;
     }
     #show-content {
         position: absolute;
