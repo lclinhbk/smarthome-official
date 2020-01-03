@@ -13,7 +13,7 @@
     </h3><br>
     <div class="row">
       <% for (item in smartHomeList) { %>
-      <div class="col-md-6 col-xs-12">
+      <div class="col-md-6 col-xs-12" id='table-info'>
         <div class="smart-home-item" >
           <div class="device-title">
             <span>
@@ -31,6 +31,17 @@
     </div>
   </div>
 </body>
+<script>
+  let x = document.querySelectorAll('#table-info');
+  if(x.length == 1)
+  {
+      for(let key in x)
+      {
+        key.classList.remove('col-md-6');
+        key.classList.remove('col-xs-12');
+      }
+  }
+</script>
 <% include ../partials/script %>
 
 </html>
