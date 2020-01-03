@@ -94,7 +94,7 @@
     outline: 0;
     border: 0;
     /*background: blue;*/
-    border-top: 1px solid black;
+    border-top: 1px ridge;
     margin-top: 0;
     color: navy;
 }
