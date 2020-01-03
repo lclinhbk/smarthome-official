@@ -125,6 +125,10 @@ form>input[value="Submit"]:hover {
     background-size: cover;
 }
 #CameraBodyH3{
+    font-family: Cairo;
+    color:navy;
+    font-size: 40px;
+    font-weight: bold;
     padding-top: 10px;
     margin: 0;
 }
@@ -134,7 +138,7 @@ form>input[value="Submit"]:hover {
     min-height: auto;
     margin: auto;
     background: transparent;
-    
+
 }
 #playCam video {
     background: lightblue;

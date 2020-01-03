@@ -1,4 +1,4 @@
-.bg-3 { 
+.bg-3 {
     background-color: #ffffff;
     color: #555555;
 }
@@ -15,26 +15,23 @@
     font-size: 12px;
     letter-spacing: 5px;
 }
-.navbar-nav li:hover:not(:last-child) {
-    display:block;
-    min-width: 35px;
-    min-height: 15px;
-    border-radius: 20px;
-    background: rgb(76, 159, 228);
+#icon-options  {
+  position: absolute;
+  right: 20px;
 }
+
 .navbar-nav  li a:hover {
-    color: #8decd9 !important;
-    font-size: 15px;
-    
+    color: #1abc9c !important;
+
 }
 
 .navbar-nav li a {
-    font-size: 15px;
-    font-weight: bold;
+    font-size: 20px;
 }
+
 .active>a {
   color: #1abc9c !important;;
- 
+
 }
 
 .smart-home-item {
@@ -99,7 +96,7 @@
     /*background: blue;*/
     border-top: 1px solid black;
     margin-top: 0;
-    color: black;
+    color: navy;
 }
 .butLog button {
     display: inline-block;
@@ -112,10 +109,10 @@
     border: 0;
     outline: 0;
     border-radius: 2vw;
-    font-family: octicons;
+    font-family: Rockwell;
 }
 .butLog button:hover {
-    
+
     color: blue;
 }
 /************************************************
@@ -132,7 +129,7 @@
     padding: 15px 15px;
     background: #5BC0DE;
     border-radius: 20px ;
-    
+
 }
 #btn-camera a {
     display: block;
@@ -153,14 +150,14 @@
     display: inline-block;
 }
 #che1, #che2, #che3, #che4
-{   
+{
     margin: 0 10px;
     display: inline-block;
     background: lightblue;
     padding: 10px 0;
     text-align: center;
     width: 70px;
-    border-radius: 20px; 
+    border-radius: 20px;
 }
 /************************************************
 \************************************************\
@@ -174,13 +171,15 @@
     text-align: center;
     margin: auto;
     margin-top: 12px;
+    margin-right: 0px;
 }
 .container #butPas #but-change-pass {
     display: inline-block;
     /* padding: .8vw 0 0 0; */
+    font-family: Cairo;
     font-size: 18px;
     font-weight: bold;
-    color: #777;
+    color: navy;
     background: transparent;
     border: 0;
     outline: 0;
@@ -192,13 +191,14 @@
 #show-content {
     position: absolute;
     top: 100%;
-    right: 30%;
+    right: 0%;
     z-index: 9999;
     display: none;
     padding: 5px;
     min-width: 220px;
-    background: lightblue;
-    border-radius: 10px ;
+    background: white;
+    border-radius: 10px;
+    border-style:ridge;
 }
 #show-content span {
     display: block;
@@ -290,7 +290,7 @@
     .chel1chel2
     {
         display: block;
-        margin: 10px 0; 
+        margin: 10px 0;
     }
     #show-content {
         position: absolute;

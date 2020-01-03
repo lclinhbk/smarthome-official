@@ -3,6 +3,12 @@
 
 <head>
   <% include ../partials/head %>
+  <style>
+    .change{
+      width: 45%;
+      margin: auto;
+    }
+  </style>
 </head>
 
 <body>
@@ -39,6 +45,7 @@
       {
         key.classList.remove('col-md-6');
         key.classList.remove('col-xs-12');
+        key.classList.add('change');
       }
   }
 </script>
