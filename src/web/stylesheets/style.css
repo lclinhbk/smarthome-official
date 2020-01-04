@@ -176,9 +176,8 @@
 .container #butPas #but-change-pass {
     display: inline-block;
     /* padding: .8vw 0 0 0; */
-    font-family: Cairo;
+    font-family: Arial;
     font-size: 18px;
-    font-weight: bold;
     color: navy;
     background: transparent;
     border: 0;
