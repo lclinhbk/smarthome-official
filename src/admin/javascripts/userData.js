@@ -60,7 +60,47 @@ function deleteUser(index)
               if (!response.data.success){
                 return alert("Delete this user failed");
               }
-              location.reload();
+              // location.reload();
+              axios.get('/smarthome_user/getByUserId/' + mangListData[index].user_id)
+                .then(function(responseSmarthomeUser) {
+                  // handle success
+                  console.log(responseSmarthomeUser.data);
+                  if (!responseSmarthomeUser.data.success){
+                    return alert("Delete this Smarthome user failed");
+                  }
+                  console.log(responseSmarthomeUser.data.data);
+                  let smarthomeUserId = [];
+                  let smarthomeUserIndex = 0;
+                  console.log(Object.keys(responseSmarthomeUser.data.data).length);
+                  let keyNumber = Object.keys(responseSmarthomeUser.data.data).length;
+                  for (smarthomeUserIndex ; smarthomeUserIndex < keyNumber; smarthomeUserIndex ++) {
+                      smarthomeUserId[smarthomeUserIndex] = Object.keys(responseSmarthomeUser.data.data)[smarthomeUserIndex];
+                      axios.delete('/smarthome_user/delete/' + smarthomeUserId[smarthomeUserIndex])
+                        .then(function(responseDeleteSmarthomeUser) {
+                          // handle success
+                          console.log(responseDeleteSmarthomeUser.data);
+                          if (!responseDeleteSmarthomeUser.data.success){
+                            return alert("Delete this smarthome User failed");
+                          }
+                          //location.reload();
+                        })
+                        .catch(function(error) {
+                            // handle error
+                            // console.log(error);
+                            alert("Delete this smarthome User failed");
+                            console.log(error.responseDeleteSmarthomeUser.data);
+                          });
+                  }
+                  console.log('-------------------');
+                  console.log(smarthomeUserId[smarthomeUserIndex]);
+                  location.reload();
+                })
+                .catch(function(error) {
+                    // handle error
+                    // console.log(error);
+                    alert("Delete this smarthome user failed");
+                    console.log(error.responseSmarthomeUser.data);
+                  });
             })
             .catch(function(error) {
                 // handle error
@@ -71,8 +111,27 @@ function deleteUser(index)
         } catch(error){
           console.log(error);
         }
+        // try {
+        //   axios.get('/smarthome_user/getByUserId/' + mangListData[index].user_id)
+        //     .then(function(response) {
+        //       // handle success
+        //       console.log(response.data);
+        //       if (!response.data.success){
+        //         return alert("Delete this Smarthome user failed");
+        //       }
+        //       console.log(response.data.data);
+        //       // location.reload();
+        //     })
+        //     .catch(function(error) {
+        //         // handle error
+        //         // console.log(error);
+        //         alert("Delete this user failed");
+        //         console.log(error.response.data);
+        //       });
+        // } catch(error){
+        //   console.log(error);
+        // }
         txt = "OK bạn đã xóa User : " + mangListData[index].user_id;
-
       } else
       {
         txt = "Thoát ra";
