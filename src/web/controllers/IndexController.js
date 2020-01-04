@@ -320,7 +320,7 @@ module.exports = {
             };
 
             var doAction = axios({
-                headers: { 'uuid': constants.DEMO_USER_TOKEN },
+                headers: { 'uuid': req.session.uuid },
                 method: 'post',
                 url: constants.API_URI + '/action',
                 data: actionData
