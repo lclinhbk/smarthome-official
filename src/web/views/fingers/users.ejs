@@ -10,6 +10,8 @@
     <div class="container bg-3 text-center">
         <h3 style="color:navy; font-size: 35px; font-family: Cairo; font-weight: bold;">
             <%= page %>
+            <button id  = 'deleteAllFinger' onclick="emptyFinger()" style='font-size:24px'><i class='far fa-trash-alt'></i></button>
+            <button id  = 'addNewUser' data-userid= '<%= user_id %>' data-smarthomeid='<%= smarthome_id %>' onclick="newUser()" style='font-size:24px'><i class='fas fa-plus'></i></button>
         </h3><br>
         <div class="row">
             <input type="hidden" id="smarthomeDevice_id" value="<%= smartHomeDevice.smarthomeDevice_id %>">
@@ -46,7 +48,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="text-center action-item">
+                    <div class="text-center action-item" style="position:relative;">
                         <% if (smartHomeUser[item].finger_id != 'Updating') { %>
                         <button class="btn btn-primary finger-action btnFingerUserId<%= smartHomeUser[item].smarthomeUser_id %>"
                             data-action="enroll" data-smarthomeuserid="<%= smartHomeUser[item].smarthomeUser_id %>">Add</button>
@@ -57,6 +59,9 @@
                         <% }  else { %>
                         <button class="btn btn-primary" disabled>Updating</button>
                         <button class="btn btn-danger" disabled>Updating</button>
+                        <button id = 'resetThisFinger' onclick="resetThisFingerUser()"
+                            data-smarthomeuseridtoreset="<%= smartHomeUser[item].smarthomeUser_id %>"
+                            style='font-size:20px;'><i class='fas fa-wrench'></i></button>
                         <% } %>
                     </div>
                 </div>
@@ -66,6 +71,7 @@
     </div>
 </body>
 <% include ../partials/script %>
+<script src="/fingerUser.js"></script>
 <script>
     $(document).ready(function () {
         setTimeout(function () {
@@ -94,7 +100,7 @@
                     console.log('.btnFingerUserId' + smarthomeUser_id);
                     $('.btnFingerUserId' + smarthomeUser_id).html('Updating');
                     $('#fingerUserId' + smarthomeUser_id).html('figner_id: Updating');
-                    $.LoadingOverlay("hide");
+                    window.location.reload();
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     console.log(textStatus, errorThrown);

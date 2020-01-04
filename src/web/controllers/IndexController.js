@@ -171,6 +171,7 @@ module.exports = {
             }
 
             var smartHomeId = req.params['id'];
+            req.session.smarthomeId = smartHomeId;
 
             var smartHome = await axios.get(constants.API_URI + '/smarthome/get_by_id/' + smartHomeId, { headers: { 'uuid': ss.uuid } });
             if (!smartHome.data.success) {
@@ -205,7 +206,9 @@ module.exports = {
 
             var smartHomeUser = response.data.data;
 
-            res.render(viewPath + '/fingers/users.ejs', { page: 'FINGER USERS', menuId: 'smart_homes', userName : req.session.userData.name,  smartHomeUser: smartHomeUser, smartHomeDevice: smartHomeDevice });
+            res.render(viewPath + '/fingers/users.ejs', { page: 'FINGER USERS', menuId: 'smart_homes', userName : req.session.userData.name,
+              smartHomeUser: smartHomeUser, smartHomeDevice: smartHomeDevice,
+              user_id: req.session.userData.user_id, smarthome_id: req.session.smarthomeId  });
         } catch (error) {
             console.error(error);
         }
