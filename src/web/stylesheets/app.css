@@ -131,7 +131,7 @@ form>input[value="Submit"]:hover {
     font-weight: bold;
     padding-top: 10px;
     margin: 0;
-    border: lightblue 1px solid;
+    border-bottom: lightblue 1px solid;
 }
 #playCam {
     position: relative;
