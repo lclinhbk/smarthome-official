@@ -11,11 +11,18 @@ module.exports = {
         }
         res.render(viewPath + '/index.ejs', { page: 'Home', menuId: 'home', userName : userName });
     },
+    // camera: async function (req, res, next) {
+    //
+    //   res.render(viewPath + '/camera/camera.ejs');
+    // },
     error: async function (req, res, next) {
         res.render(viewPath + '/error.ejs', { page: 'Error', menuId: '', message: 'Empty response.' });
     },
     cameraPage: async function (req, res, next) {
-        res.render(viewPath + '/camera/camera.ejs', { page: 'Camera IP', menuId: 'camera', userName: req.session.userData.name });
+      if(!req.session.signed) {
+        return res.render(viewPath + '/login/index.ejs', { page: 'Login', menuId: 'login', userName: '' });
+        }
+      res.render(viewPath + '/camera/camera.ejs', { page: 'Camera IP', menuId: 'camera', userName: req.session.userData.name });
     },
 
     loginPage: async function (req, res, next) {
