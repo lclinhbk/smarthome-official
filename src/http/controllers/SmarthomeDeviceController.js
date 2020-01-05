@@ -36,7 +36,7 @@ module.exports = {
     },
     update_smarthomeDevice : async function(req, res) {
         console.log("HTTP PUT Request");
-        //var smarthomeDeviceId = req.params['id'];
+        var smarthomeDeviceId = req.params['id'];
         // var smarthomeDeviceData = { smarthomeDevice_id: smarthomeDeviceId, smarthome_id: req.body.smarthome_id,
         //     series_number : req.body.series_number, machine_type : req.body.machine_type,
         //     status : req.body.status, updated_at : req.body.updated_at, created_at : req.body.created_at,
