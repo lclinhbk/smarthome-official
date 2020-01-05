@@ -24,7 +24,7 @@ module.exports = {
 
         }
         else {
-          res.render(viewPath + '/login/index.ejs', { page: 'Login', menuId: 'login', userName: '' });
+          res.render(viewPath + '/error.ejs', { page: 'Login', menuId: 'login', userName: '' });
         }
 
     },
