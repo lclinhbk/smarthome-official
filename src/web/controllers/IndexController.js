@@ -243,7 +243,7 @@ module.exports = {
             }
             var smartHomeDevice = response.data.data;
 
-            var updateSmartHomeDevice = axios({
+            var updateSmartHomeDevice = await axios({
                 method: 'post',
                 url: constants.API_URI + '/smarthome_device/update/' + smarthomeDevice_id,
                 data: {
