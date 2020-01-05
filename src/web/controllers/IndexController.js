@@ -19,10 +19,14 @@ module.exports = {
         res.render(viewPath + '/error.ejs', { page: 'Error', menuId: '', message: 'Empty response.' });
     },
     cameraPage: async function (req, res, next) {
-      if(!req.session.signed) {
-        return res.render(viewPath + '/login/index.ejs', { page: 'Login', menuId: 'login', userName: '' });
+      if(req.session.signed) {
+        res.render(viewPath + '/camera/camera.ejs', { page: 'Camera IP', menuId: 'camera', userName: req.session.userData.name });
+
         }
-      res.render(viewPath + '/camera/camera.ejs', { page: 'Camera IP', menuId: 'camera', userName: req.session.userData.name });
+        else {
+          res.render(viewPath + '/login/index.ejs', { page: 'Login', menuId: 'login', userName: '' });
+        }
+
     },
 
     loginPage: async function (req, res, next) {
