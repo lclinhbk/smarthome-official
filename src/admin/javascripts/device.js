@@ -216,7 +216,7 @@ function accept_and_cls_device()
     currentDeviceData.smarthome_id = smartHomeIdData;
     delete currentDeviceData.smarthome_name;
     try {
-    axios( {method: 'post', url:'/smarthome_device/update', data: currentDeviceData }) //data: is BODY
+    axios( {method: 'post', url:'/smarthome_device/update/' + currentDeviceData.smarthome_id, data: currentDeviceData }) //data: is BODY
       .then(function(response) {
         // handle success
         console.log(response.data);

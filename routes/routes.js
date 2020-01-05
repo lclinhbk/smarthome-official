@@ -36,7 +36,7 @@ var appRouter = function (app) {
     app.get('/smarthome_device/get_list', smarthomeDeviceController.smarthomeDevice_list);
     app.get('/smarthome_device/get_by_id/:id', smarthomeDeviceController.smarthomeDevice_by_id);
     app.post('/smarthome_device/add', smarthomeDeviceController.new_smarthomeDevice);
-    app.post('/smarthome_device/update', smarthomeDeviceController.update_smarthomeDevice);
+    app.post('/smarthome_device/update/:id', smarthomeDeviceController.update_smarthomeDevice);
     app.post('/smarthome_device/update-data/:id', smarthomeDeviceController.updateSmartHomeDeviceData);
     app.delete('/smarthome_device/delete/:id', smarthomeDeviceController.delete_smarthomeDevice);
     app.get('/smarthome_device/:id', authControllerUser.middleware, smarthomeDeviceController.getSmartHomeDeviceBySmartHomeId);
