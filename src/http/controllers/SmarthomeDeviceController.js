@@ -42,7 +42,7 @@ module.exports = {
         //     status : req.body.status, updated_at : req.body.updated_at, created_at : req.body.created_at,
         //     name : req.body.name, data : req.body.data };
         var smarthomeDeviceData = req.body;
-        var update_smarthomeDevice = await smarthomeDeviceService.update_smarthomeDevice(smarthomeDeviceData.smarthomeDevice_id, smarthomeDeviceData);
+        var update_smarthomeDevice = await smarthomeDeviceService.update_smarthomeDevice(smarthomeDeviceId, smarthomeDeviceData);
         console.log(update_smarthomeDevice);
         if (update_smarthomeDevice.status) {
             return res.status(200).json({ success: true, message: update_smarthomeDevice.message });
