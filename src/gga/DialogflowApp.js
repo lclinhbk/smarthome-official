@@ -34,6 +34,12 @@ app.intent('Default Welcome Intent', (conv) => {
 app.intent('Control_Devices', async (conv, { devices, status, location, percentage }) => {
       //console.log(location);
       var socketId = await getSocketId.getSocketId('de782a97-bc34-4e39-a005-10973e92b54e');
+      if(status == 'up' || status == 'of') {
+        status = 'off';
+      }
+      if(devices == 'line' || devices == 'lie') {
+        devices = 'light';
+      }
       switch (location) {
         case 'bedroom':
          if(devices == 'light') {
