@@ -328,9 +328,36 @@
   border : none;
   outline: none;
 }
+#onPir {
+  position: absolute;
+  right:120px;
+  bottom: 60px;
+  /* background:rgba(0, 0, 0, 0); */
+  /* background: #3eb0dd; */
+  background: transparent;
+  border : none;
+  outline: none;
+}
+#offPir {
+  position: absolute;
+  right:60px;
+  bottom: 60px;
+  /* background:rgba(0, 0, 0, 0); */
+  /* background: #3eb0dd; */
+  background: transparent;
+  border : none;
+  outline: none;
+}
+#offPir:hover{
+  color: #3eb0dd;
+}
+#onPir:hover{
+  color: #3eb0dd;
+}
 #addNewUser:hover{
   color: #3eb0dd;
 }
+
 #deleteAllFinger:hover{
   color: red;
 }

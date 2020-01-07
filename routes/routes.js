@@ -88,6 +88,7 @@ var appRouter = function (app) {
     app.post('/smart-homes/web-hook', indexController.webHook);
     app.get('/smart-homes/devices/camera', indexController.cameraPage);
     app.post('/smart-homes/change-brightness', indexController.changeBrightness);
+    app.post('/smart-homes/devices/pirMode', indexController.pirMode);
 
     // Login page added
     app.get('/loginPage', indexController.loginPage);

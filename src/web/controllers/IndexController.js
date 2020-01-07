@@ -362,6 +362,22 @@ module.exports = {
           return res.status(400).json({ success: false, message: error });
       }
     },
+    pirMode: async function(req, res, next){
+      try{
+        var actionData = req.body;
+        console.log('pirMode:', actionData);
+        var doAction = axios({
+            headers: { 'uuid': req.session.uuid },
+            method: 'post',
+            url: constants.API_URI + '/action',
+            data: actionData
+        });
+        return res.status(200).json({ success: true, message: 'Successfully' });
+      }catch (error) {
+          return res.status(400).json({ success: false, message: error });
+      }
+
+    },
     webHook: async function (req, res, next) {
         try {
             const data = req.body;

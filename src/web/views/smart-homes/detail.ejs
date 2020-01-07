@@ -29,6 +29,12 @@
                         <% } %>
                         <% if (smartHomeDevices[item].machine_type == 'RESTROOM_LIGHT') { %>
                             <img src="./smart/light_on.png" width="250px" height="220px" style="display:block;margin:auto;">
+                            <button id = 'offPir' onclick="turnOffPir()"
+                                data-smarthomepiridoff="<%= smartHomeDevices[item].smarthomeDevice_id %>"
+                                style='font-size:20px;'><i class='fas fa-wrench'></i></button>
+                            <button id = 'onPir' onclick="turnOnPir()"
+                                data-smarthomepiridon="<%= smartHomeDevices[item].smarthomeDevice_id %>"
+                                style='font-size:20px;'><i class='fas fa-reply-all'></i></button>
                         <% } %>
                         <% if (smartHomeDevices[item].machine_type == 'BEDROOM_DHT22') { %>
                             <img src="./smart/Temperature.png" width="250px" height="220px" style="display:block;margin:auto;">
