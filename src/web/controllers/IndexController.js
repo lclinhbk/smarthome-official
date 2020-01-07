@@ -330,7 +330,8 @@ module.exports = {
             var actionData = {
                 smarthome_device_id: smarthomeDevice_id,
                 finger_id: smarthomeUser.finger_id,
-                action: action
+                action: action,
+                smarthomeUser_id: smarthomeUser_id //updated 07/01/2020
             };
 
             var doAction = axios({
