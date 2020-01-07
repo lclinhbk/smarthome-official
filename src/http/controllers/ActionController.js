@@ -39,6 +39,7 @@ module.exports = {
         console.log('socketId:', socketId);
 
         var emitData = { deviceId: smarthome_device_id, action: action, data: req.body };
+        console.log('emitData2RaspPi', emitData);
 
         socketio.emitMessage(socketId, emitData);
         return res.status(200).json({ success: true, message: "The action sent to..." + socketId });

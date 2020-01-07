@@ -83,6 +83,7 @@ var appRouter = function (app) {
     app.get('/smart-homes/devices/:id/users', indexController.smartHomeUsers);
     app.post('/smart-homes/do-action', indexController.doAction);
     app.post('/smart-homes/devices/finger-action', indexController.fingerAction);
+    app.post('/smart-homes/devices/finger-search', indexController.fingerSearch);
     app.post('/smart-homes/web-hook', indexController.webHook);
     app.get('/smart-homes/devices/camera', indexController.cameraPage);
     app.post('/smart-homes/change-brightness', indexController.changeBrightness);

@@ -12,6 +12,7 @@
             <%= page %>
             <button id  = 'deleteAllFinger' onclick="emptyFinger()" style='font-size:24px'><i class='far fa-trash-alt'></i></button>
             <button id  = 'addNewUser' data-userid= '<%= user_id %>' data-smarthomeid='<%= smarthome_id %>' onclick="newUser()" style='font-size:24px'><i class='fas fa-plus'></i></button>
+            <button id  = 'searchFinger' onclick="identifyFinger()" data-fingerdeviceid = "<%= smartHomeDevice.smarthomeDevice_id %>" style='font-size:24px'><i class='fa fa-search'></i></button>
         </h3><br>
         <div class="row">
             <input type="hidden" id="smarthomeDevice_id" value="<%= smartHomeDevice.smarthomeDevice_id %>">

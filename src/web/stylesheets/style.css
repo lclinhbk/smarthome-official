@@ -319,6 +319,15 @@
   border : none;
   outline: none;
 }
+#searchFinger {
+  position: absolute;
+  right:120px;
+  /* background:rgba(0, 0, 0, 0); */
+  /* background: #3eb0dd; */
+  background: transparent;
+  border : none;
+  outline: none;
+}
 #addNewUser:hover{
   color: #3eb0dd;
 }
@@ -328,6 +337,10 @@
 #resetThisFinger:hover {
   color: blue;
 }
+#searchFinger:hover {
+  color: green
+}
+
 @media screen and (max-width:766px) {
     #btn-camera {
         max-width: 50%;

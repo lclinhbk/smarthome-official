@@ -37,6 +37,30 @@ function resetThisFingerUser() {
 function emptyFinger() {
 console.log("---------------");
 }
+function identifyFinger(){
+  console.log("indentifyFinger");
+  let btnSearchFinger =document.getElementById('searchFinger');
+  let fingerDeviceId = btnSearchFinger.dataset.fingerdeviceid;
+  console.log("fingerDeviceId:", fingerDeviceId);
+  var actionData = {
+      smarthome_device_id: fingerDeviceId,
+      //finger_id: smarthomeUser.finger_id,
+      action: 'search',
+      //smarthomeUser_id: smarthomeUser_id //updated 07/01/2020
+  };
+  try {
+
+  var doAction = axios({
+      //headers: { 'uuid': req.session.uuid },
+      method: 'post',
+      url: "/smart-homes/devices/finger-search",
+      data: actionData
+  });
+  //return res.status(200).json({ success: true, message: 'Successfully' });
+}catch(error){
+  console.log(error);
+}
+}
 function newUser() {
   let btnNewUser = document.getElementById('addNewUser');
   console.log(btnNewUser.dataset.userid);
