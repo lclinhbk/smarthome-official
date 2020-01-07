@@ -17,6 +17,7 @@ function turnOnPir(){
       url: "/smart-homes/devices/pirMode",
       data: actionData
   });
+  alert("PIR sensor is ON");
   //return res.status(200).json({ success: true, message: 'Successfully' });
 }catch(error){
   console.log(error);
@@ -42,6 +43,7 @@ function turnOffPir(){
       url: "/smart-homes/devices/pirMode",
       data: actionData
   });
+  alert("PIR sensor is OFF");
   //return res.status(200).json({ success: true, message: 'Successfully' });
 }catch(error){
   console.log(error);
