@@ -21,7 +21,8 @@ function turnOnPir(){
 }catch(error){
   console.log(error);
 }
-},
+}
+
 function turnOffPir(){
   console.log("turnOffPir");
   let btnOffPir =document.getElementById('offPir');
