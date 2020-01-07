@@ -367,16 +367,43 @@
 #searchFinger:hover {
   color: green
 }
+#backgroundPicture{
+  background:url('/smart-homes/smart/background.jpg') no-repeat ;
+  background-size: 100vw 100vh;
+}
+#signUpBackground{
+  background: url('/smart-homes/smart/background_1.jpg') no-repeat;
+  background-size: 100vw 100vh;
+}
+#signInBackground{
+  background: url('/smart-homes/smart/background_1.jpg') no-repeat;
+  background-size: 100vw 100vh;
+}
 
 @media screen and (max-width:766px) {
+    #backgroundPicture{
+      background:url('/smart-homes/smart/mobile_background.jpg') no-repeat ;
+      background-size: 100vw 100vh;
+    }
+    #signUpBackground{
+      background:url('/smart-homes/smart/signup_mobile.jpg') no-repeat ;
+      background-size: cover;
+    }
+    #signInBackground{
+      background:url('/smart-homes/smart/signin_mobile.jpg') no-repeat ;
+      background-size: cover;
+    }
     #deleteAllFinger {
       top: 200px;
+      color: black;
     }
     #addNewUser {
       top: 200px;
+      color: black;
     }
     #searchFinger {
       top: 200px;
+      color: black;
     }
     #onPir {
       position: absolute;
