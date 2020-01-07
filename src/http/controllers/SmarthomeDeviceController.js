@@ -56,6 +56,7 @@ module.exports = {
         //     series_number : req.body.series_number, machine_type : req.body.machine_type,
         //     status : req.body.status, updated_at : req.body.updated_at, created_at : req.body.created_at,
         //     name : req.body.name, data : req.body.data };
+        console.log(req.body.data);
         var jsonDeviceData = JSON.parse(req.body.data);
         console.log("jsonDeviceData", jsonDeviceData);
         var smarthomeDeviceData = jsonDeviceData;
