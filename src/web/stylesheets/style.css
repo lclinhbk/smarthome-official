@@ -369,6 +369,25 @@
 }
 
 @media screen and (max-width:766px) {
+    #deleteAllFinger {
+      top: 200px;
+    }
+    #addNewUser {
+      top: 200px;
+    }
+    #searchFinger {
+      top: 200px;
+    }
+    #onPir {
+      position: absolute;
+      left: 60px;
+      bottom: 30px;
+    }
+    #offPir {
+      position: absolute;
+      right: 60px;
+      bottom: 30px;
+    }
     #btn-camera {
         max-width: 50%;
     }
