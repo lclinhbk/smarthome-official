@@ -345,11 +345,11 @@
   /* background:rgba(0, 0, 0, 0); */
   /* background: #3eb0dd; */
   background: transparent;
-  border : none;
+  border: none;
   outline: none;
 }
 #offPir:hover{
-  color: #3eb0dd;
+  color: red;
 }
 #onPir:hover{
   color: #3eb0dd;
