@@ -41,7 +41,9 @@ module.exports = {
         i = 0;
         while(i < 100) {
             i++;
-            io.emit('hey', emitData);
+            io.on('connection', function(socket){
+                socket.emit('hey',emitData);}
+                  });
             if (i == 99) {
                 console.log("test end");
             }
