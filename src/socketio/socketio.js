@@ -4,12 +4,22 @@ module.exports = {
     connect : function() {
         io.on('connection', function(socket){
             console.log('a user connected with sid :' + socket.id);
-            socketIdForEsp = socket.id;
+
             socket.emit('hey','hello esp8266');
             socket.on('disconnect', function(){
                 console.log('user disconnected, sid :' + socket.id);
             });
+            socket.on('smarthomeId', function (msg) {
+                    console.log("SM:"+msg);
+            });
+            timeout();
         });
+        function timeout() {
+            setTimeout(function () {
+             io.emit('reply',"A message from server");
+             timeout();
+            }, 5000);
+        }
     },
     recievedSmartHomeId : function() {
          io.on('connection', function(socket){
