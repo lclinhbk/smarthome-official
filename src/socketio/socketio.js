@@ -4,7 +4,7 @@ module.exports = {
     connect : function() {
         io.on('connection', function(socket){
             console.log('a user connected with sid :' + socket.id);
-
+            socket.broadcast.emit('hello esp8266');
             socket.on('disconnect', function(){
                 console.log('user disconnected, sid :' + socket.id);
             });
