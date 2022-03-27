@@ -38,6 +38,13 @@ module.exports = {
          io.to(socketId).emit('hey', emitData);
     },
     loopMessageToEsp: function(emitData) {
-        io.emit('hey', "hehehe");
+        i = 0;
+        while(i < 100) {
+            i++;
+            io.emit('hey', emitData);
+            if (i == 99) {
+                console.log("test end");
+            }
+        }
     }
 }
