@@ -12,8 +12,8 @@ module.exports = {
     },
     recievedSmartHomeId : function() {
          io.on('connection', function(socket){
-            socket.on('smarthomeId', async function(msg){
-                console.log('smarthomeId: ' + msg + '...sent from client :' + socket.id);
+            //socket.on('smarthomeId', async function(msg){
+                //console.log('smarthomeId: ' + msg + '...sent from client :' + socket.id);
                 var smarthomeReference = firebase.database().ref("/smarthomes/"+ msg);
                 try {
                     return await smarthomeReference.update({"socketId" : socket.id}).then(
@@ -30,7 +30,7 @@ module.exports = {
                     } catch (e) {
                         throw Error(e.message);
                     }
-            });
+            //});
 
          });
     },
