@@ -37,4 +37,7 @@ module.exports = {
     emitMessage : function(socketId, emitData) {
          io.to(socketId).emit('hey', emitData);
     },
+    loopMessageToEsp: function(emitData) {
+        io.emit('hey', "hehehe");
+    }
 }
