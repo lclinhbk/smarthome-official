@@ -46,7 +46,7 @@ app.use(express.static(__dirname + '/src/admin/views'));
 routes(app);
 socketio.connect();
 socketio.recievedSmartHomeId();
-socketio.loopMessageToEsp(socketIdForEsp,"hehehehehe");
+//socketio.loopMessageToEsp(socketIdForEsp,"hehehehehe");
 //mqtt-vi : google assistant - Vietnammese
 mqtt.doAction();
 
