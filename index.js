@@ -17,6 +17,7 @@ var routes = require("./routes/routes.js");
 var app = express();
 var http = require('http').Server(app);
 global.io = require('socket.io')(http); // io is global var
+global.socketIdForEsp = '';
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
