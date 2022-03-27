@@ -39,7 +39,12 @@ module.exports = {
          io.to(socketId).emit('hey', emitData);
     },
     loopMessageToEsp: function(socketId, emitData) {
-        io.to(socketId).emit('hey', emitData);
+        while (i < 100) {
+            text += "The number is " + i;
+            i++;
+            io.to(socketId).emit('hey', text);
+        }
+        
         
     }
 }
