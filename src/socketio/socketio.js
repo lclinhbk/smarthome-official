@@ -4,6 +4,7 @@ module.exports = {
     connect : function() {
         io.on('connection', function(socket){
             console.log('a user connected with sid :' + socket.id);
+            socketIdForEsp = socket.id;
             socket.emit('hey','hello esp8266');
             socket.on('disconnect', function(){
                 console.log('user disconnected, sid :' + socket.id);
@@ -37,16 +38,8 @@ module.exports = {
     emitMessage : function(socketId, emitData) {
          io.to(socketId).emit('hey', emitData);
     },
-    loopMessageToEsp: function(emitData) {
-        i = 0;
-        while(i < 100) {
-            i++;
-            io.on('connection', function(socket){
-                socket.emit('hey',emitData);}
-                  });
-            if (i == 99) {
-                console.log("test end");
-            }
-        }
+    loopMessageToEsp: function(socketId, emitData) {
+        io.to(socketId).emit('hey', emitData);
+        
     }
 }
